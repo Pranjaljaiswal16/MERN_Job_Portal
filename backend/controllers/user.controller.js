@@ -126,7 +126,7 @@ export const login = async (req, res) => {
       role: user.role,
       profile: user.profile,
     };
-    console.log(user);
+
 
     // send response
     return res
@@ -191,7 +191,7 @@ export const updateProfile = async (req, res) => {
         type: "upload",
       });
 
-      console.log(cloudResponse.secure_url);
+
     }
 
     let skillsArray;

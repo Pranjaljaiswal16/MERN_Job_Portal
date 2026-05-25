@@ -4,7 +4,7 @@ const isAuthenticated = (req, res, next) => {
   try {
     const token = req.cookies.token;
 
-    console.log("TOKEN:", token);
+
 
     if (!token) {
       return res.status(401).json({
@@ -15,7 +15,7 @@ const isAuthenticated = (req, res, next) => {
 
     const decode = jwt.verify(token, process.env.SECRET_JWT);
 
-    console.log("DECODE:", decode);
+
 
     if (!decode) {
       return res.status(401).json({
