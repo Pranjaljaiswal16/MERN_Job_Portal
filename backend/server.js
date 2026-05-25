@@ -49,7 +49,7 @@ const PORT = process.env.PORT || 3000;
 // 3
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 // 4
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 
