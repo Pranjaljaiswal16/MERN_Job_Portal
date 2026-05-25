@@ -27,7 +27,7 @@ const JobDescriptions = () => {
   const applyJobHandler = async () => {
     try {
       const res = await axios.get(
-        `${APPLICATION_API_END_POINT}/apply/${jobId}`,
+        `https://mern-job-portal-uzhg.onrender.com/api/v1/application/apply/${jobId}`,
         { withCredentials: true },
       );
 
