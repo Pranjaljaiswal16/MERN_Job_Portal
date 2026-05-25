@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const logOuthandler = async () => {
     try {
-      const res = await axios.get(`${USER_API_END_POINT}/logout`, {
+      const res = await axios.get(`https://mern-job-portal-uzhg.onrender.com/api/v1/user/logout`, {
         withCredentials: true,
       });
 
