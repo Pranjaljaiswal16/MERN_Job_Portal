@@ -19,7 +19,7 @@ const CompaniesCreate = () => {
   const registerNewCompany = async () => {
     try {
       const res = await axios.post(
-        `${COMPANY_API_END_POINT}/register`,
+        "https://mern-job-portal-uzhg.onrender.com/api/v1/company/register",
         { companyName },
         {
           headers: { "Content-Type": "application/json" },

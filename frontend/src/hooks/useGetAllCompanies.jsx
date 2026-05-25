@@ -12,7 +12,7 @@ const useGetAllCompanies = () => {
 
     const fetchAllCompany = async () => {
       try {
-        const res = await axios.get(`${COMPANY_API_END_POINT}/get`, {
+        const res = await axios.get(`https://mern-job-portal-uzhg.onrender.com/api/v1/company/get`, {
           withCredentials: true,
         });
 

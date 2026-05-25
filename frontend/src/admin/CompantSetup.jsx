@@ -52,7 +52,7 @@ const CompantSetup = () => {
     try {
       setloading(true);
       const res = await axios.put(
-        `${COMPANY_API_END_POINT}/update/${companyId}`,
+        `https://mern-job-portal-uzhg.onrender.com/api/v1/company/update/${companyId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

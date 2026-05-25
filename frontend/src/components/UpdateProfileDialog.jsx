@@ -51,7 +51,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
 
     try {
       const res = await axios.post(
-        `${USER_API_END_POINT}/profile/update`,
+        `https://mern-job-portal-uzhg.onrender.com/api/v1/user/profile/update`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

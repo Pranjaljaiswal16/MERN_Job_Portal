@@ -49,7 +49,7 @@ const JobDescriptions = () => {
   useEffect(() => {
     const fetchSingleJob = async () => {
       try {
-        const res = await axios.get(`${JOB_API_END_POINT}/get/${jobId}`, {
+        const res = await axios.get(`https://mern-job-portal-uzhg.onrender.com/api/v1/job/get/${jobId}`, {
           withCredentials: true,
         });
         if (res.data.success) {
@@ -91,8 +91,8 @@ const JobDescriptions = () => {
           onClick={isApplied ? null : applyJobHandler}
           disabled={isApplied}
           className={`w-full sm:w-auto h-11 px-6 text-sm font-semibold rounded-xl transition-all duration-300 shadow-sm ${isApplied
-              ? "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed shadow-none"
-              : "bg-[#7209b7] text-white hover:bg-[#5f32ad] active:scale-95"
+            ? "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed shadow-none"
+            : "bg-[#7209b7] text-white hover:bg-[#5f32ad] active:scale-95"
             }`}
         >
           {isApplied ? "Already Applied" : "Apply Now"}

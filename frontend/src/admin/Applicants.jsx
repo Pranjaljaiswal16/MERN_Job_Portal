@@ -22,7 +22,7 @@ const Applicants = () => {
     const fetchAllApplicants = async () => {
       try {
         const res = await axios.get(
-          `${APPLICATION_API_END_POINT}/${params.id}/applicants`,
+          `https://mern-job-portal-uzhg.onrender.com/api/v1/application/${params.id}/applicants`,
           { withCredentials: true },
         );
         dispatch(setAllapplications(res.data.job));

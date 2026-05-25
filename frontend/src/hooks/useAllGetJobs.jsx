@@ -12,7 +12,7 @@ const useAllGetJobs = () => {
   useEffect(() => {
     const fetchAllJobs = async () => {
       try {
-        const res = await axios.get(`${JOB_API_END_POINT}/get?keyword=${searchQuery}`, {
+        const res = await axios.get(`https://mern-job-portal-uzhg.onrender.com/api/v1/job/get?keyword=${searchQuery}`, {
           withCredentials: true,
         });
 

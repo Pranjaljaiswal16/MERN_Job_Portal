@@ -11,7 +11,7 @@ const useAllGetAdminJobs = () => {
     const fetchAllAdminJobs = async () => {
       try {
         const res = await axios.get(
-          `${JOB_API_END_POINT}/getadminjobs`,
+          `https://mern-job-portal-uzhg.onrender.com/api/v1/job/getadminjobs`,
           {
             withCredentials: true,
           }
