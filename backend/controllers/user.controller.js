@@ -134,8 +134,8 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
       })
       .json({
         message: `Welcome back ${user.fullname}`,
@@ -238,5 +238,10 @@ export const updateProfile = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+
+    return res.status(500).json({
+      message: "Internal Server Error",
+      success: false,
+    });
   }
 };

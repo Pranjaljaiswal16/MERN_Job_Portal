@@ -25,12 +25,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const corsOptions = {
+// const corsOptions = {
+//   origin: "https://mern-job-portal-uzhg.onrender.com",
+//   credentials: true,
+// };
+
+// app.use(cors(corsOptions));
+app.use(cors({
   origin: "https://mern-job-portal-uzhg.onrender.com",
   credentials: true,
-};
+}));
 
-app.use(cors(corsOptions));
 
 // routes
 app.use("/api/v1/user", userRoute);
@@ -38,12 +43,13 @@ app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 
+
 const PORT = process.env.PORT || 3000;
 
 // 3
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 // 4
-app.use((req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 
